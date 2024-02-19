@@ -33,29 +33,29 @@
 <body>
     <header class="navigation fixed-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-white">
+            <nav class="navbar navbar-expand-lg navbar-block">
                 <a class="navbar-brand order-1" href="index.html">
-                    <img class="img-fluid" width="100px" src="{% static 'images/logo.png' %}"
-                        alt="Reader | Hugo Personal Blog Template">
+                    <img class="img-fluid" width="100px" src="{{ index_text.logo }}"
+                        alt="{{ index_text.logoalt }}">
                 </a>
                 <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
                     <ul class="navbar-nav mx-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Home
+                            <a class="nav-link" href="{%url 'core:index' %}">
+                                الرئيسية
                             </a>
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                About
+                            <a class="nav-link" href="{%url 'core:about' %}">
+                                من نحن
                             </a>
 
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="{%url 'core:contact' %}">تواصل معنا</a>
                         </li>
 
                         <!-- <li class="nav-item dropdown">
@@ -90,7 +90,7 @@
                         </li> -->
 
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="shop.html">المتجر</a>
                         </li>
                     </ul>
                 </div>
@@ -102,9 +102,9 @@
 
 
                     <!-- search -->
-                    <form  class="search-bar">
-                        <input id="search-query" name="s" type="search">
-                    </form>
+<!--                    <form  class="search-bar">-->
+<!--                        <input id="search-query" name="s" type="search">-->
+<!--                    </form>-->
 
                     <button class="navbar-toggler border-0 order-1" type="button" data-toggle="collapse"
                         data-target="#navigation">
@@ -117,14 +117,14 @@
     </header>
 
 
-
+<main >
     {% block nav %}
-    <main >
+
         <div class="banner text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 mx-auto">
-                        <h1 class="mb-5">{{ banner_text.banner }}</h1>
+                        <h1 class="mb-5">{{ index_text.banner }}</h1>
 
                     </div>
                 </div>
@@ -189,8 +189,8 @@
           <section class="text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">مثال الألبوم</h1>
-        <p class="lead text-muted">وصف قصير حول الألبوم أدناه (محتوياته ، ومنشؤه ، وما إلى ذلك). اجعله قصير ولطيف، ولكن ليست قصير جدًا حتى لا يتخطى الناس هذا الألبوم تمامًا.</p>
+        <h1 class="fw-light">{{index_text.slag}}</h1>
+        <p class="lead text-muted">{{index_text.supslag}}</p>
           <ul class="list-inline widget-list-inline">
                             <li class="list-inline-item"><a href="tags.html">City</a></li>
                             <li class="list-inline-item"><a href="tags.html">Color</a></li>
@@ -487,8 +487,9 @@
 
 
 
-    </main>
+
     {% endblock %}
+</main>
     <footer class="footer">
         <svg class="footer-border" height="214" viewBox="0 0 2204 214" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

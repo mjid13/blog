@@ -1,4 +1,5 @@
 from django.contrib import admin
-from .models import IndexPage
+from .models import *
 
 admin.site.register(IndexPage)
+admin.site.register(aboutPage)
