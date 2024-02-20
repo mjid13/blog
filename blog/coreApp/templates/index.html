@@ -33,8 +33,8 @@
 <body>
     <header class="navigation fixed-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-block">
-                <a class="navbar-brand order-1" href="index.html">
+            <nav class="navbar navbar-expand-lg navbar-white">
+                <a class="navbar-brand order-1" href="{% url 'core:index'%}">
                     <img class="img-fluid" width="100px" src="{{ index_text.logo }}"
                         alt="{{ index_text.logoalt }}">
                 </a>
@@ -381,14 +381,47 @@
                                     <i class="ti-timer"></i>3 Min To Read
                                 </li>
 
+                            </ul>
+
+                            <ul>
+                                 <li class="list-inline-item">
+                                    <a href="author-single.html" class="card-meta-author">
+                                        <img src="images/john-doe.jpg" alt="John Doe">
+
+                                    </a>
+                                </li>
+                                <br>
+
                                 <li class="list-inline-item">
-                                    <ul class="card-meta-tag list-inline">
-                                        <li class="list-inline-item"><a href="tags.html">Demo</a></li>
-                                        <li class="list-inline-item"><a href="tags.html">Elements</a></li>
-                                    </ul>
+                                    <a href="author-single.html" class="card-meta-author">
+                                        <span>John Doe</span>
+
+                                    </a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    15 jan, 2020</i>
                                 </li>
                             </ul>
-                            <p>Heading example Here is example of hedings. You can use this heading by …</p>
+                            <a href="post/elements/" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="https://via.placeholder.com/300x180" alt="Card Image">
+                        <div class="card-body">
+                            <h3 class="h4 mb-3"><a class="post-title" href="post/elements/">Elements That You Can Use In
+                                    This.</a></h3>
+                            <ul class="card-meta list-inline">
+
+                                <li class="list-inline-item">
+                                    <i class="ti-timer"></i>3 Min To Read
+                                </li>
+
+                            </ul>
+
                             <ul>
                                 <li class="list-inline-item">
                                     <a href="author-single.html" class="card-meta-author">
@@ -418,51 +451,8 @@
                                     <i class="ti-timer"></i>3 Min To Read
                                 </li>
 
-                                <li class="list-inline-item">
-                                    <ul class="card-meta-tag list-inline">
-                                        <li class="list-inline-item"><a href="tags.html">Demo</a></li>
-                                        <li class="list-inline-item"><a href="tags.html">Elements</a></li>
-                                    </ul>
-                                </li>
                             </ul>
-                            <p>Heading example Here is example of hedings. You can use this heading by …</p>
-                            <ul>
-                                <li class="list-inline-item">
-                                    <a href="author-single.html" class="card-meta-author">
-                                        <img src="images/john-doe.jpg" alt="John Doe">
-                                        <span>John Doe</span>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item"> | </li>
-                                <li class="list-inline-item">
-                                    15 jan, 2020 <i class="ti-calendar"></i>
-                                </li>
-                            </ul>
-                            <a href="post/elements/" class="btn btn-outline-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
 
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="https://via.placeholder.com/300x180" alt="Card Image">
-                        <div class="card-body">
-                            <h3 class="h4 mb-3"><a class="post-title" href="post/elements/">Elements That You Can Use In
-                                    This.</a></h3>
-                            <ul class="card-meta list-inline">
-
-                                <li class="list-inline-item">
-                                    <i class="ti-timer"></i>3 Min To Read
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <ul class="card-meta-tag list-inline">
-                                        <li class="list-inline-item"><a href="tags.html">Demo</a></li>
-                                        <li class="list-inline-item"><a href="tags.html">Elements</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <p class="card-text">>هذه بطاقة أوسع مع نص داعم أدناه كمقدمة طبيعية لمحتوى إضافي. هذا المحتوى أطول قليلاً.</p>
                             <ul>
                                 <li class="list-inline-item">
                                     <a href="author-single.html" class="card-meta-author">
