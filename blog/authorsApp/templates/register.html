@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block nav %}
-
 <main>
 <div class="header text-center">
   <div class="container">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  
+
   <svg class="header-shape-1" width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0.965848 20.6397L0.943848 38.3906L18.6947 38.4126L18.7167 20.6617L0.965848 20.6397Z" stroke="#040306"
       stroke-miterlimit="10" />
@@ -25,7 +25,7 @@
       stroke-miterlimit="10" />
   </svg>
 
-  
+
   <svg class="header-shape-2" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_d)">
       <path class="path"
@@ -48,7 +48,7 @@
     </defs>
   </svg>
 
-  
+
   <svg class="header-shape-3" width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0.965848 20.6397L0.943848 38.3906L18.6947 38.4126L18.7167 20.6617L0.965848 20.6397Z" stroke="#040306"
       stroke-miterlimit="10" />
@@ -57,7 +57,7 @@
       stroke-miterlimit="10" />
   </svg>
 
-  
+
   <svg class="header-border" height="240" viewBox="0 0 2202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M1 123.043C67.2858 167.865 259.022 257.325 549.762 188.784C764.181 125.427 967.75 112.601 1200.42 169.707C1347.76 205.869 1901.91 374.562 2201 1"
@@ -69,16 +69,19 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        
-        <div class="content mb-5">
-          <h2 id="we-would-love-to-hear-from-you">We would Love To Hear From You&hellip;.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit massa vitae felis augue. In venenatis scelerisque accumsan egestas mattis. Massa feugiat in sem pellentesque.</p>
+
+              <div class="content mb-5">
+          <h2 id="we-would-love-to-hear-from-you">Update Profile&hellip;.</h2>
         </div>
-        
-        <form method="POST" action="#">
+  <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy  }}
+      <form method="POST" action="#">
           <div class="form-group">
-            <label for="name">Your Name (Required)</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="John Doe" required>
+            <label>{{ form.username.label }}</label>
+              <div class="input-wrapper">
+           {% load crispy_forms_tags %}
+              </div>
           </div>
           <div class="form-group">
             <label for="email">Your Email Address (Required)</label>
@@ -94,9 +97,26 @@
           </div>
           <button type="submit" class="btn btn-primary">Send Now</button>
         </form>
-      </div>
-    </div>
-  </div>
-</section>
+        <button type="submit">Save</button>
+    </form>
+</div>
+    </div></div></section>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="avatar">Avatar:</label>
+    <input type="file" name="avatar" id="avatar">
+    <br>
+    <label for="bio">Bio:</label>
+    <textarea name="bio" id="bio"></textarea>
+    <br>
+    <label for="role">Role:</label>
+    <select name="role" id="role">
+        <option value="admin">Admin</option>
+        <option value="moderator">Moderator</option>
+        <option value="user" selected>User</option>
+    </select>
+    <br>
+    <input type="submit" value="Update">
+</form>
 </main>
 {% endblock %}

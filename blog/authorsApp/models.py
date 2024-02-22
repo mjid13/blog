@@ -20,16 +20,16 @@ class Profile(models.Model):
             null=True,
             validators=[validate_image_file_extension]
     )
-    bio = models.TextField(max_length=500, blank=True, help_text="Tell us a little bit about yourself.")
-    rule = models.TextField(max_length=500, blank=True)
+    bio = models.TextField(max_length=500, blank=True, help_text="Tell us a little bit about yourself.", null=True)
+    rule = models.TextField(max_length=500, blank=True, null=True)
     email = models.TextField(max_length=500, blank=True)
-    last_login = models.DateTimeField(max_length=500, blank=True)
-    regestred_at = models.DateTimeField(max_length=500, blank=True)
-    github = models.TextField(max_length=500, blank=True)
-    linkedin = models.TextField(max_length=500, blank=True)
-    website = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+    last_login = models.DateTimeField(max_length=500, blank=True, null=True)
+    regestred_at = models.DateTimeField(max_length=500, blank=True, null=True)
+    github = models.TextField(max_length=500, blank=True, null=True)
+    linkedin = models.TextField(max_length=500, blank=True, null=True)
+    website = models.TextField(max_length=500, blank=True, null=True)
+    location = models.CharField(max_length=30, blank=True, null=True)
+    birth_date = models.DateTimeField(null=True, blank=True)
 
 
 

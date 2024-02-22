@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block nav %}
+
+<div class="banner text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="mb-5">wellcome to your world </h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group col-md-12">
+                        {{form.username}}
+                    </div>
+                    <div class="form-group col-md-12">
+                        {{form.}}
+                    </div>
+                    <div class="form-group col-md-12">
+                        {{form.password}}
+                        {{ form.password.placeholder}}
+                    </div>
+
+
+                    <!-- {{ form.as_p }} -->
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="{% url 'core:signup' %}">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div>
+    <h3 class="mb-4">Leave a Reply {{form.password.placeholder}}</h3>
+    <form method="POST">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <input class="form-control shadow-none" type={{form.username}} placeholder={{form.password.placeholder}}
+                    required>
+            </div>
+            <div class="form-group col-md-4">
+                <input class="form-control shadow-none" type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group col-md-4">
+                <input class="form-control shadow-none" type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group col-md-4">
+                <input class="form-control shadow-none" type="url" placeholder="Website">
+                <p class="font-weight-bold valid-feedback">OK! You can skip this field.</p>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Comment Now</button>
+    </form>
+</div>
+
+{% endblock %}

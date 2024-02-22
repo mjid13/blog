@@ -31,11 +31,11 @@
 
 
 <body>
-    <header class="navigation fixed-top">
+    <header class="navigation nav-bg">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-white">
                 <a class="navbar-brand order-1" href="{% url 'core:index'%}">
-                    <img class="img-fluid" width="100px" src="{{ index_text.logo }}"
+                    <img class="img-fluid" width="100px" src="{% static 'images/logo.png' %}"
                         alt="{{ index_text.logoalt }}">
                 </a>
                 <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
