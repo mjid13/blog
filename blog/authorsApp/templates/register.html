@@ -1,5 +1,4 @@
 {% extends 'index.html' %}
-{% load crispy_forms_tags %}
 {% load static %}
 {% block nav %}
 <main>
@@ -75,13 +74,11 @@
         </div>
   <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form|crispy  }}
+        {{ form.as_p }}
       <form method="POST" action="#">
           <div class="form-group">
             <label>{{ form.username.label }}</label>
-              <div class="input-wrapper">
-           {% load crispy_forms_tags %}
-              </div>
+              <div class="form-control">{{ form.username }}</div>
           </div>
           <div class="form-group">
             <label for="email">Your Email Address (Required)</label>
